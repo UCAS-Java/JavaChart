@@ -1,4 +1,0 @@
-<!ELEMENT months (month)*>
-<!ELEMENT month (count)>
-<!ATTLIST month id CDATA #IMPLIED>
-<!ELEMENT count (#PCDATA)>
