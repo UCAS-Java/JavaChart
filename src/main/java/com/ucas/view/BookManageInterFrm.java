@@ -21,6 +21,7 @@ import javax.swing.table.JTableHeader;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.StandardChartTheme;
 import org.jfree.chart.axis.CategoryAxis;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PlotOrientation;
@@ -107,6 +108,12 @@ public class BookManageInterFrm extends JInternalFrame {
 				System.out.println(rs.getString("num"));
 				dataset.setValue(Integer.parseInt(rs.getString("num")), rs.getString("name"), rs.getString("name"));
 			}
+			// 修改
+			StandardChartTheme mChartTheme = new StandardChartTheme("CN");
+			mChartTheme.setLargeFont(new Font("黑体", Font.BOLD, 20));
+			mChartTheme.setExtraLargeFont(new Font("宋体", Font.PLAIN, 15));
+			mChartTheme.setRegularFont(new Font("宋体", Font.PLAIN, 15));
+			ChartFactory.setChartTheme(mChartTheme);
 
 			JfreeChartTest chart = new JfreeChartTest("图书统计结果", dataset, "图书数量统计柱状图", "图书名称", "该图书数量");
 			scrollPane.add(chart, BorderLayout.EAST);
@@ -140,6 +147,7 @@ public class BookManageInterFrm extends JInternalFrame {
 		v_head.add("图书名称");
 		v_head.add("图书类别");
 		dtm.addRow(v_head);
+
 		Connection con = null;
 		try {
 			con = dbUtil.getCon();
