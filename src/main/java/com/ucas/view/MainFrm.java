@@ -1,5 +1,7 @@
 package com.ucas.view;
 
+import com.ucas.listener.TrafficStatisticsListener;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -55,6 +57,8 @@ public class MainFrm extends JFrame {
 		// 总菜单
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
+		table = new JDesktopPane();
+		contentPane = new JPanel();
 
 		// 一级总菜单
 		JMenu mnNewMenu = new JMenu("功能菜单");
@@ -64,6 +68,7 @@ public class MainFrm extends JFrame {
 		JMenu mnNewMenu_1 = new JMenu("图书信息统计");
 		mnNewMenu.add(mnNewMenu_1);
 		JMenu jMenu访问量统计 = new JMenu("访问量报表");  // 杰添加
+		jMenu访问量统计.addMenuListener(new TrafficStatisticsListener(table));
 		menuBar.add(jMenu访问量统计);
 
 		JMenuItem menuItem = new JMenuItem("图书类别统计");
@@ -96,11 +101,10 @@ public class MainFrm extends JFrame {
 			}
 		});
 		mnNewMenu.add(menuItem_4);
-		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
-		table = new JDesktopPane();
+
 		contentPane.add(table, BorderLayout.CENTER);
 		// this.setBounds(200, 10, 1500, 1000);
 		// 秦文杰修改了此处，因为我的电脑分辨率是1366*768，界面显示不完，故调小。
