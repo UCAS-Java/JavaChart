@@ -44,8 +44,8 @@ public class BookManageInterFrm extends JInternalFrame {
 	private DbUtil dbUtil = new DbUtil();
 	private BookDao bookTypeDao = new BookDao();
 
-	/**
-	 * Launch the application.
+	/**application
+	 * Launch the .
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
@@ -67,7 +67,8 @@ public class BookManageInterFrm extends JInternalFrame {
 		setClosable(true);
 		setIconifiable(true);
 		setTitle("图书信息统计 ");
-		setBounds(100, 100, 1200, 800);
+		// setBounds(100, 100, 1200, 800);
+		setBounds(0, 0, 1100, 800);
 
 		// 显示图书类别信息
 		JPanel scrollPane = new JPanel();

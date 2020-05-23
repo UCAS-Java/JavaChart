@@ -69,7 +69,7 @@ public class BookTypeManageInterFrm extends JInternalFrame {
 		setTitle("图书类别信息统计 ");
 		// setBounds(100, 100, 1200, 800);
 		// 秦文杰修改了此处
-		setBounds(50, 50, 700, 500);
+		setBounds(0, 0, 1100, 600);
 
 		// 显示图书类别信息
 		JPanel scrollPane = new JPanel();

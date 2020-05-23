@@ -63,6 +63,8 @@ public class MainFrm extends JFrame {
 		// 二级分菜单：信息统计菜单
 		JMenu mnNewMenu_1 = new JMenu("图书信息统计");
 		mnNewMenu.add(mnNewMenu_1);
+		JMenu jMenu访问量统计 = new JMenu("访问量报表");  // 杰添加
+		menuBar.add(jMenu访问量统计);
 
 		JMenuItem menuItem = new JMenuItem("图书类别统计");
 		menuItem.addActionListener(new ActionListener() {
@@ -102,6 +104,6 @@ public class MainFrm extends JFrame {
 		contentPane.add(table, BorderLayout.CENTER);
 		// this.setBounds(200, 10, 1500, 1000);
 		// 秦文杰修改了此处，因为我的电脑分辨率是1366*768，界面显示不完，故调小。
-		this.setBounds(200, 10, 800, 600);
+		this.setBounds(0, 0, 1200, 730);
 	}
 }
