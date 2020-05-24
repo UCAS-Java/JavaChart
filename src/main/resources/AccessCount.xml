@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<!DOCTYPE months SYSTEM "src/main/resources/AccessCount.dtd">
+<!DOCTYPE months SYSTEM "AccessCount.dtd">
 <months>
     <month id="1">
         <count>5091</count>

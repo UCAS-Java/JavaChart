@@ -7,12 +7,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.util.Vector;
 
-import javax.swing.BorderFactory;
-import javax.swing.JInternalFrame;
-import javax.swing.JPanel;
-import javax.swing.JTable;
-import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
+import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
@@ -32,6 +27,7 @@ import org.jfree.data.category.DefaultCategoryDataset;
 import com.ucas.dao.BookDao;
 import com.ucas.model.BookType;
 import com.ucas.util.DbUtil;
+import sun.plugin.javascript.JSContext;
 
 /**
  * 书籍管理类

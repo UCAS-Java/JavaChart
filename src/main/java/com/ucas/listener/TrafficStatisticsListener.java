@@ -1,11 +1,13 @@
 package com.ucas.listener;
 
+import com.mysql.fabric.xmlrpc.base.ResponseParser;
 import org.jfree.chart.*;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import javax.swing.*;
@@ -33,7 +35,13 @@ public class TrafficStatisticsListener implements MenuListener {
         factory.setIgnoringElementContentWhitespace(true);
         DefaultCategoryDataset mDataset = new DefaultCategoryDataset();
         try {
-            DocumentBuilder builder = factory.newDocumentBuilder();;
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            builder.setEntityResolver(new ResponseParser(){
+                @Override
+                public InputSource resolveEntity(String publicId, String systemId) throws IOException, SAXException {
+                    return new InputSource(getClass().getClassLoader().getResourceAsStream("AccessCount.dtd"));
+                }
+            });
             InputStream in = getClass().getClassLoader().getResourceAsStream("AccessCount.xml");
             Document doc = builder.parse(in);
             NodeList monthNodes = doc.getElementsByTagName("month");
